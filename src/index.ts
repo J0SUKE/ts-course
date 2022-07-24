@@ -1,6 +1,4 @@
-let age: number = 20;
-if (age<50) {
-    age+=10;
-}
-console.log(age);
+type users = Array<{name:string,age:number}>
 
+const utilisateurs:users = [];
+utilisateurs[0] = {name:'jean',age:21};
