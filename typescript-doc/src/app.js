@@ -1,10 +1,20 @@
-var req = {
-    url: 'https://null.com',
-    method: 'GET'
-};
-req.method = 'TRY';
-console.log(req.method);
-function handleRequest(url, method) {
-    console.log(url, method);
+function isBird(pet) {
+    return pet.fly !== undefined;
 }
-handleRequest(req.url, req.method);
+function move(animal) {
+    if ("swim" in animal && animal.swim) {
+        return animal.swim();
+    }
+    if ("fly" in animal && animal.fly) {
+        return animal.fly();
+    }
+}
+function giveFluFunction(pet) {
+    if (isBird(pet)) {
+        pet.fly();
+    }
+}
+var flappy = {
+    fly: function () { return console.log('i\'am flying !'); }
+};
+giveFluFunction(flappy);

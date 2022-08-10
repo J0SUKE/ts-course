@@ -1,18 +1,22 @@
-interface Bird {
-    fly:()=>void
+interface Circle
+{
+    kind:'circle',
+    radius:number,
 }
-interface Fish {
-    swim:()=>void
-}
-interface Human {
-    swim?:()=>void,
-    fly?:()=>void
+interface Square
+{
+    kind:'square',
+    sideLength:number
 }
 
-function move(animal : Bird | Fish | Human ) {
-    if ("swim" in animal && animal.swim ) {
-        return animal.swim()
+type Shape = Circle | Square;
+
+function handleShape(shape:Shape) {
+    if (shape.kind=='square') {
+        return  shape.sideLength*2;
     }
-    //return animal.fly();
+    if (shape.kind=='circle') {
+        return  shape.radius*2;
+    }
+    shape
 }
-
