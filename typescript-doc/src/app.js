@@ -1,20 +1,8 @@
-function isBird(pet) {
-    return pet.fly !== undefined;
+function Longest(a, b) {
+    if (a.length >= b.length)
+        return a;
+    else
+        return b;
 }
-function move(animal) {
-    if ("swim" in animal && animal.swim) {
-        return animal.swim();
-    }
-    if ("fly" in animal && animal.fly) {
-        return animal.fly();
-    }
-}
-function giveFluFunction(pet) {
-    if (isBird(pet)) {
-        pet.fly();
-    }
-}
-var flappy = {
-    fly: function () { return console.log('i\'am flying !'); }
-};
-giveFluFunction(flappy);
+console.log(Longest('12', '123'));
+console.log(Longest([1, 2], [1, 2, 3, 4]));

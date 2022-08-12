@@ -1,22 +1,17 @@
-interface Circle
+// desctructuring 
+
+function sheer({name,age,email}:{name:string,age:number,email:string})
 {
-    kind:'circle',
-    radius:number,
-}
-interface Square
-{
-    kind:'square',
-    sideLength:number
+    console.log(`Hi I am ${name} of email : ${email} and i am ${age}`);
 }
 
-type Shape = Circle | Square;
+interface User
+{
+    name:string;
+    age:number;
+    email:string;
+}
 
-function handleShape(shape:Shape) {
-    if (shape.kind=='square') {
-        return  shape.sideLength*2;
-    }
-    if (shape.kind=='circle') {
-        return  shape.radius*2;
-    }
-    shape
+function Cheer2({name,age,email}:User) {
+    console.log(`Hi I am ${name} of email : ${email} and i am ${age}`);   
 }
